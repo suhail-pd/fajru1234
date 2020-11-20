@@ -87,7 +87,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!-- //banner -->
-	
+	<section>
+	<div>
+		<form action=""  id="gform1">
+
+			<div class="form-group col-12">
+				<label>Suggestions</label>
+				<textarea name="Suggestions" class="form-control" id="iq" placeholder="Suggestions Please"></textarea>
+				<button type="submit" class="btn btn-default">Submit </button>
+			</div>	
+		</form>
+	</div>
+
+	</section>
 <!-- about -->
 <section class="about" id="about">
 	<div class="container-fluid">
@@ -570,5 +582,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		})
 	})
 </script>
+<script>
+	$("#gform1").submit((e)=>{
+		e.preventDefault()
+		$.ajax({
+			url:"https://script.google.com/macros/s/AKfycbw64k5B3vpK7u_3A-bLoMV_x8zGBpReQEBMlDGdKQ/exec",
+			data:$("#gform1").serialize(),
+			method:"post",
+			success:function (response){
+				alert("Form submitted successfully")
+				window.location.reload()
+				//window.location.href="https://google.com"
+			},
+			error:function (err){
+				alert("Something Error")
+
+			}
+		})
+	})
+</script>
+
 </body>
 </html>
